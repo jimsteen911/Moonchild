@@ -4,27 +4,57 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  background: #f9f9f9;
+  color: #222;
 }
 
-header, footer {
-  background-color: #222;
-  color: #fff;
+header {
+  background: #fff;
+  padding: 20px 10px;
   text-align: center;
-  padding: 1em;
+  border-bottom: 1px solid #ccc;
 }
 
-.intro, .services, .cta {
+h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.intro,
+.services,
+.federal-readiness {
   padding: 20px;
   max-width: 800px;
   margin: auto;
   background: #fff;
-  margin-top: 10px;
-  border-radius: 5px;
+  margin-top: 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+h2 {
+  color: #333;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+ul {
+  padding-left: 20px;
 }
 
 a {
-  color: #007BFF;
+  color: #856c36;
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #eee;
+  font-size: 14px;
+  margin-top: 40px;
 }
