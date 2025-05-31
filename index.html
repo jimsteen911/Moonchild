@@ -1,81 +1,853 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>King David Contracting LLC</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="King David Contracting LLC - Custom Solutions for SAM.gov setup, grant writing, LLC formation, and business support services in Vineland, NJ">
+    <meta name="keywords" content="SAM.gov, grant writing, LLC formation, business consulting, King David Contracting, Vineland NJ, custom solutions">
+    <title>King David Contracting LLC | Custom Solutions for Your Business</title>
+    
+    <!-- Schema Markup for Local Business -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "King David Contracting LLC",
+        "description": "Custom Solutions for SAM.gov setup, grant writing, LLC formation, and business support services",
+        "url": "https://moonchildoftheearth.com",
+        "telephone": "+1-856-362-4496",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "3468 N West Ave",
+            "addressLocality": "Vineland",
+            "addressRegion": "NJ",
+            "postalCode": "08360"
+        },
+        "openingHours": "Mo-Fr 09:00-17:00",
+        "sameAs": [
+            "https://www.linkedin.com/company/kingdavidcontracting",
+            "https://www.facebook.com/kingdavidcontracting"
+        ]
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            padding: 5px;
+        }
+        
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        
+        .logo-tagline {
+            font-size: 0.9rem;
+            color: #ffd700;
+            font-style: italic;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+        
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f8ff" width="1200" height="600"/><circle fill="%234169e1" cx="200" cy="150" r="50" opacity="0.3"/><circle fill="%234169e1" cx="800" cy="350" r="80" opacity="0.2"/><circle fill="%234169e1" cx="1000" cy="100" r="60" opacity="0.25"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        .hero-tagline {
+            font-size: 1.8rem;
+            color: #ffd700;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e3c72;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #2a5298;
+        }
+        
+        .service-card h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-card p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .service-button, .external-link {
+            background: #1e3c72;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .service-button:hover, .external-link:hover {
+            background: #2a5298;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            color: #1e3c72;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .credentials {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+        
+        .credentials h4 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+        
+        .credentials ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .credentials li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .credentials li:last-child {
+            border-bottom: none;
+        }
+        
+        .about-image {
+            text-align: center;
+        }
+        
+        .logo-display {
+            width: 300px;
+            height: 300px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .logo-display img {
+            width: 280px;
+            height: 280px;
+            object-fit: contain;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form h3 {
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2a5298;
+        }
+        
+        .submit-button {
+            background: #1e3c72;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        .submit-button:hover {
+            background: #2a5298;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .contact-info h3 {
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item-icon {
+            font-size: 1.5rem;
+            color: #2a5298;
+            margin-right: 1rem;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background: #1e3c72;
+            color: white;
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: #2a5298;
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+        
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 200px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1e3c72;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #ffd700;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #2a5298;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #1e3c72;
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .logo-text {
+                font-size: 1.1rem;
+            }
+            
+            .logo-tagline {
+                font-size: 0.8rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.4rem;
+            }
+            
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-display {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .logo-display img {
+                width: 230px;
+                height: 230px;
+            }
+        }
+        
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+        .hidden { display: none; }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="King David Contracting LLC Logo" style="height: 120px; display: block; margin: 0 auto; padding: 10px;">
-    <h1>King David Contracting LLC</h1>
-    <p>Custom Solutions Is What We Do</p>
-  </header>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div class="logo-text">
+                    King David Contracting LLC
+                    <div class="logo-tagline">Custom Solutions</div>
+                </div>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu" id="mobileMenu">☰</button>
+        </nav>
+    </header>
 
-  <section class="intro">
-    <p>We provide strategic help for people and businesses who need real solutions. From paperwork to web design — if it’s confusing, we simplify it. If it’s broken, we fix it. If it’s missing, we build it.</p>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>King David Contracting LLC</h1>
+                <div class="hero-tagline">Custom Solutions</div>
+                <p>Expert SAM.gov setup, grant writing, LLC formation, web design, and construction services</p>
+                <a href="#contact" class="cta-button">Get Started Today</a>
+            </div>
+        </div>
+    </section>
 
-  <section class="services">
-    <h2>Services</h2>
-    <ul>
-      <li><strong>SAM.gov Fix</strong>: Profile setup, corrections, and eligibility alignment.</li>
-      <li><strong>Strategic Document Creation</strong>: Grant writing, operating agreements, capability statements, and web design.</li>
-      <li><strong>LLC Setup – Start to Finish</strong>: Name search, EIN, compliance, and full registration.</li>
-      <li><strong>Custom Requests</strong>: No box thinking. We handle complex, sensitive, and unusual requests.</li>
-      <li><strong>General Handyman Services</strong>: Carpentry, masonry, repair, cleanouts, and maintenance.</li>
-      <li><strong>Unclaimed Funds Recovery</strong>: Through King David Contracting's service line <em>The Asset Locator</em>, we conduct thorough searches across dozens of federal, state, and private sources to help individuals and businesses reclaim lost assets. We use automation, escrow safeguards, and secure methods to simplify recovery. No commitment is required to start — just send your name and previous addresses to <a href="mailto:info@theassetlocator.com">info@theassetlocator.com</a> and we’ll begin the search.</li>
-    </ul>
-  </section>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏛️</div>
+                    <h3>SAM.gov Profile Setup</h3>
+                    <p>Complete SAM.gov registration and profile optimization to help your business access government contracting opportunities and streamline the federal registration process.</p>
+                    <button class="service-button" onclick="openServiceModal('sam')">Learn More</button>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📝</div>
+                    <h3>Grant Writing</h3>
+                    <p>Professional grant writing services to help secure funding for your business or organization. We specialize in federal, state, and private grant applications.</p>
+                    <button class="service-button" onclick="openServiceModal('grant')">Learn More</button>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>LLC Formation</h3>
+                    <p>Complete LLC formation support including operating agreements, documentation, filing assistance, and ongoing compliance guidance for your new business.</p>
+                    <button class="service-button" onclick="openServiceModal('llc')">Learn More</button>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Web Design</h3>
+                    <p>Professional web design services to establish your business's online presence with modern, mobile-responsive websites that attract and convert customers.</p>
+                    <button class="service-button" onclick="openServiceModal('web')">Learn More</button>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔨</div>
+                    <h3>Construction Services</h3>
+                    <p>Professional construction and contracting services for residential and commercial projects. From renovations to new builds, we deliver quality craftsmanship.</p>
+                    <a href="https://kingdavidcontracting.com" class="external-link" target="_blank">Visit Construction Site</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Custom Solutions</h3>
+                    <p>Special request services tailored to your unique business needs. We provide custom support and consulting for projects that require specialized expertise.</p>
+                    <button class="service-button" onclick="openServiceModal('custom')">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="federal-readiness">
-    <h2>Federal Readiness, Grants, Strategic Documents & Asset Recovery</h2>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About King David Contracting LLC</h2>
+                    <p>Based in Vineland, New Jersey, King David Contracting LLC provides custom solutions for businesses looking to grow and succeed. We specialize in helping companies navigate complex regulatory requirements, access government contracting opportunities, and establish strong business foundations.</p>
+                    <p>Our comprehensive approach combines business consulting expertise with practical construction services, making us your one-stop solution for both administrative and physical business needs. We understand that every business is unique, which is why we offer custom solutions tailored to your specific requirements.</p>
+                    
+                    <div class="credentials">
+                        <h4>Why Choose King David Contracting LLC</h4>
+                        <ul>
+                            <li>✓ Local New Jersey Business - Serving Vineland and surrounding areas</li>
+                            <li>✓ Comprehensive Business Solutions Under One Roof</li>
+                            <li>✓ Experienced in Government Contracting Processes</li>
+                            <li>✓ Licensed Construction and Business Services</li>
+                            <li>✓ Personalized Custom Solutions Approach</li>
+                            <li>✓ Professional Documentation and Filing Support</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="logo-display">
+                        <div style="text-align: center; color: #1e3c72;">
+                            <div style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">KING DAVID CONTRACTING</div>
+                            <div style="font-size: 1.5rem; color: #2a5298; margin-bottom: 1rem;">Custom Solutions</div>
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">🏢🔨</div>
+                            <div style="font-size: 1rem; font-style: italic;">Your Business Growth Partner</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <p><strong>Let’s be clear: everything is downstream of SAM.gov.</strong> If you're a nonprofit, a for-profit, a community development initiative, a tribal agency, or a public-private partnership — you need to be registered in the federal System for Award Management (SAM) to access funding, bid contracts, or receive disaster assistance. I can guide you through that process, fully and professionally.</p>
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">How long does SAM.gov registration take?</div>
+                <div class="faq-answer">
+                    <p>SAM.gov registration typically takes 7-10 business days once all required documentation is submitted. We ensure your application is complete and accurate to avoid delays and rejections.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">What's included in your LLC formation service?</div>
+                <div class="faq-answer">
+                    <p>Our LLC formation service includes name availability check, articles of organization filing, operating agreement drafting, EIN application, registered agent service, and guidance on ongoing compliance requirements.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">Do you provide construction services in addition to business consulting?</div>
+                <div class="faq-answer">
+                    <p>Yes! King David Contracting LLC offers both business consulting services and professional construction services. Visit our construction division at kingdavidcontracting.com for more details about our building and renovation services.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">What makes your approach different?</div>
+                <div class="faq-answer">
+                    <p>We provide "Custom Solutions" - meaning we tailor our services to your specific needs rather than offering one-size-fits-all packages. Whether you need business formation, government contracting setup, or construction services, we adapt our approach to fit your unique situation.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">What are your service areas?</div>
+                <div class="faq-answer">
+                    <p>We're based in Vineland, NJ and primarily serve South Jersey and the greater Philadelphia region. However, many of our business consulting services (like SAM.gov setup and LLC formation) can be provided remotely to clients nationwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <p>Whether you're applying for grants, bidding on local infrastructure funded by federal dollars, forming a new LLC to pursue government work, or simply trying to understand how to get started — I provide strategic help, customized documentation, and operational alignment for federal and quasi-federal engagement.</p>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get Your Custom Solution Today</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Request a Free Consultation</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interest *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="sam">SAM.gov Profile Setup</option>
+                                <option value="grant">Grant Writing</option>
+                                <option value="llc">LLC Formation</option>
+                                <option value="web">Web Design</option>
+                                <option value="construction">Construction Services</option>
+                                <option value="custom">Custom Solutions</option>
+                                <option value="multiple">Multiple Services</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your project, timeline, and any specific requirements..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📧</div>
+                        <div>
+                            <strong>Email:</strong><br>
+                            info@moonchildoftheearth.com
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📞</div>
+                        <div>
+                            <strong>Phone:</strong><br>
+                            <a href="tel:+18563624496" style="color: inherit; text-decoration: none;">(856) 362-4496</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div>
+                            <strong>Address:</strong><br>
+                            3468 N West Ave<br>
+                            Vineland, NJ 08360
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">🕒</div>
+                        <div>
+                            <strong>Business Hours:</strong><br>
+                            Monday - Friday: 9:00 AM - 5:00 PM EST<br>
+                            Saturday: By Appointment
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">⚡</div>
+                        <div>
+                            <strong>Response Time:</strong><br>
+                            Within 24 hours<br>
+                            <em>Same day for urgent requests</em>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">🏆</div>
+                        <div>
+                            <strong>Free Consultation:</strong><br>
+                            30-minute discovery call<br>
+                            <em>No obligation assessment</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h3>What I Offer</h3>
-    <ul>
-      <li><strong>SAM.gov Registration & Entity Setup:</strong> Full, compliant registration — no shortcuts, no confusion.</li>
-      <li><strong>Capability Statements:</strong> Tailored to your industry, mission, and goals.</li>
-      <li><strong>Grant Readiness & Application Support:</strong> From eligibility screening to full submission.</li>
-      <li><strong>Strategic Document Creation:</strong> Operating agreements, business plans, executive summaries, technical narratives, and budgets that meet federal expectations.</li>
-      <li><strong>LLC Setup & Formation:</strong> EIN, business structure, registration, and internal controls setup.</li>
-      <li><strong>Unclaimed Funds Recovery:</strong> Through King David Contracting's service line <em>The Asset Locator</em>, I help individuals and businesses identify and recover lost assets from over 40 federal, state, and corporate databases. Using secure automation and escrow safeguards, I simplify recovery and return control to rightful owners. To begin a search, send your full name and any previous addresses to <a href="mailto:info@theassetlocator.com">info@theassetlocator.com</a>.</li>
-    </ul>
-
-    <h3>The Reality</h3>
-    <p>SAM.gov registration and grant alignment aren’t quick tasks. They require accurate information, legal understanding, and technical fluency. A missed NAICS code, a wrong certification box, or a poorly worded capability statement can shut you out for good.</p>
-
-    <p>I’ve done the work, passed the checkpoints, and navigated the bureaucracy — not only for myself, but for others who came to me overwhelmed or overlooked. I won’t help anyone falsify or exaggerate. But if you're serious about access, growth, and legitimacy, I can help you build it the right way.</p>
-
-    <h3>Who This Is For</h3>
-    <p>These services are tailored for:</p>
-    <ul>
-      <li>Entrepreneurs and LLC owners seeking federal contracts</li>
-      <li>Nonprofits and community groups pursuing federal and state grants</li>
-      <li>Local government or redevelopment groups in need of compliance documents</li>
-      <li>Anyone curious whether they have unclaimed assets waiting to be recovered</li>
-    </ul>
-
-    <h3>Contact</h3>
-    <p>
-      <strong>James Steenland</strong><br>
-      Phone: <a href="tel:+18563624496">(856) 362-4496</a><br>
-      Email (Professional Services): <a href="mailto:james@kingdavidcontracting.com">james@kingdavidcontracting.com</a><br>
-      Email (Unclaimed Funds): <a href="mailto:james@theassetlocator.com">james@theassetlocator.com</a><br>
-    </p>
-
-    <p><strong>To book handyman or professional services, call or email me directly.</strong></p>
-    <p><strong>Want to start an unclaimed funds search with no strings attached?</strong><br>
-    Just email your name and any past addresses to <a href="mailto:info@theassetlocator.com">info@theassetlocator.com</a>.</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 King David Contracting LLC</p>
-  </footer>
-</body>
-</html>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Business Services</h4>
+                    <ul>
+                        <li><a href="#services">SAM.gov Setup</a></li>
+                        <li><a href="#services">Grant Writing</a></li>
+                        <li><a href="#services">LLC Formation</a></li>
+                        <li><a href="#services">Web Design</a></li>
+                        <li><a href="#services">Custom Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Construction</h4>
+                    <ul>
+                        <li><a href="https://kingdavidcontracting.com" target="_blank">Construction Services</a></li>
+                        <li><a href="https://kingdavidcontracting.com" target="_blank">Residential Projects</a></li>
+                        <li><a href="https://kingdavidcontracting.com" target="_blank">Commercial Work</a></li>
+                        <li><a href="https://king
